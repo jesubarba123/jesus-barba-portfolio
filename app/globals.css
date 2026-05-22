@@ -8,11 +8,11 @@
   --carbon: #090f18;
   --platinum: #f3fbff;
   --muted: #8ba0b7;
-  --racing: #ff2f92;
-  --ignition: #b026ff;
-  --volt: #00ff9d;
-  --cyan: #00e5ff;
-  --amber: #ff9f1c;
+  --racing: #3f7cff;
+  --ignition: #4a3fb8;
+  --volt: #2ee88f;
+  --cyan: #36bfd4;
+  --amber: #a77b44;
   --editor-line: #152033;
 }
 
@@ -28,8 +28,8 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    linear-gradient(115deg, rgba(176, 38, 255, 0.18), transparent 34%),
-    linear-gradient(245deg, rgba(0, 229, 255, 0.11), transparent 36%),
+    linear-gradient(115deg, rgba(74, 63, 184, 0.16), transparent 34%),
+    linear-gradient(245deg, rgba(54, 191, 212, 0.1), transparent 36%),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 82px),
     linear-gradient(180deg, #000000 0%, #040407 45%, #000000 100%);
   color: var(--platinum);
@@ -47,8 +47,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(0, 255, 157, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.028) 1px, transparent 1px);
+    linear-gradient(rgba(46, 232, 143, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 191, 212, 0.026) 1px, transparent 1px);
   background-size: 28px 28px;
   mask-image: linear-gradient(to bottom, black, transparent 84%);
 }
@@ -70,7 +70,7 @@ body::after {
 }
 
 ::selection {
-  background: rgba(255, 47, 146, 0.5);
+  background: rgba(63, 124, 255, 0.48);
   color: white;
 }
 
@@ -102,8 +102,8 @@ textarea {
 
 .precision-grid {
   background-image:
-    linear-gradient(rgba(0, 255, 157, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 255, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(46, 232, 143, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(54, 191, 212, 0.048) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
@@ -112,9 +112,9 @@ textarea {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(0, 229, 255, 0.9),
-    rgba(255, 47, 146, 0.95),
-    rgba(0, 255, 157, 0.82),
+    rgba(54, 191, 212, 0.8),
+    rgba(63, 124, 255, 0.75),
+    rgba(46, 232, 143, 0.72),
     transparent
   );
 }
@@ -124,16 +124,17 @@ textarea {
 }
 
 .hero-name {
-  font-size: clamp(2.9rem, 6.6vw, 7.1rem);
-  line-height: 0.9;
+  font-size: clamp(1.35rem, 4.8vw, 4.6rem);
+  line-height: 0.95;
   letter-spacing: 0;
-  background: linear-gradient(90deg, #ffffff 0%, #00e5ff 28%, #ff2f92 62%, #b026ff 100%);
+  white-space: nowrap;
+  background: linear-gradient(90deg, #f8fbff 0%, #36bfd4 34%, #3f7cff 68%, #7668ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   text-shadow:
-    0 0 22px rgba(255, 47, 146, 0.52),
-    0 0 38px rgba(0, 229, 255, 0.22);
+    0 0 18px rgba(63, 124, 255, 0.36),
+    0 0 34px rgba(54, 191, 212, 0.18);
 }
 
 .diagonal-slice {
@@ -146,8 +147,8 @@ textarea {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(118deg, transparent 0 52%, rgba(0, 229, 255, 0.12) 52.2%, transparent 53%),
-    linear-gradient(118deg, transparent 0 72%, rgba(255, 47, 146, 0.14) 72.2%, transparent 73%);
+    linear-gradient(118deg, transparent 0 52%, rgba(54, 191, 212, 0.1) 52.2%, transparent 53%),
+    linear-gradient(118deg, transparent 0 72%, rgba(63, 124, 255, 0.1) 72.2%, transparent 73%);
 }
 
 .focus-ring {
@@ -161,14 +162,14 @@ textarea {
 
 .code-panel {
   position: relative;
-  border: 1px solid rgba(0, 229, 255, 0.2);
+  border: 1px solid rgba(54, 191, 212, 0.2);
   background:
     linear-gradient(180deg, rgba(9, 15, 24, 0.96), rgba(0, 0, 0, 0.96)),
-    linear-gradient(90deg, rgba(255, 47, 146, 0.12), rgba(0, 229, 255, 0.1));
+    linear-gradient(90deg, rgba(63, 124, 255, 0.1), rgba(54, 191, 212, 0.08));
   box-shadow:
-    0 0 0 1px rgba(255, 47, 146, 0.08) inset,
-    0 0 34px rgba(0, 229, 255, 0.12),
-    0 0 58px rgba(255, 47, 146, 0.1);
+    0 0 0 1px rgba(63, 124, 255, 0.08) inset,
+    0 0 34px rgba(54, 191, 212, 0.1),
+    0 0 58px rgba(63, 124, 255, 0.08);
 }
 
 .code-panel::after {
@@ -177,46 +178,46 @@ textarea {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, transparent 0 7%, rgba(255, 255, 255, 0.045) 7.2%, transparent 7.4%),
-    repeating-linear-gradient(180deg, transparent 0 29px, rgba(0, 255, 157, 0.055) 29px 30px);
+    linear-gradient(90deg, transparent 0 7%, rgba(255, 255, 255, 0.04) 7.2%, transparent 7.4%),
+    repeating-linear-gradient(180deg, transparent 0 29px, rgba(46, 232, 143, 0.045) 29px 30px);
   opacity: 0.65;
 }
 
 .editor-chrome {
-  border-bottom: 1px solid rgba(0, 229, 255, 0.18);
-  background: linear-gradient(90deg, rgba(255, 47, 146, 0.12), rgba(0, 229, 255, 0.08));
+  border-bottom: 1px solid rgba(54, 191, 212, 0.18);
+  background: linear-gradient(90deg, rgba(63, 124, 255, 0.1), rgba(54, 191, 212, 0.07));
 }
 
 .neon-title {
-  color: #f8fbff;
+    color: #f8fbff;
   text-shadow:
-    0 0 14px rgba(0, 229, 255, 0.48),
-    0 0 28px rgba(176, 38, 255, 0.38);
+    0 0 14px rgba(54, 191, 212, 0.36),
+    0 0 28px rgba(63, 124, 255, 0.28);
 }
 
 .neon-pink {
-  color: #ff2f92;
-  text-shadow: 0 0 18px rgba(255, 47, 146, 0.55);
+  color: #6da0ff;
+  text-shadow: 0 0 18px rgba(63, 124, 255, 0.36);
 }
 
 .neon-cyan {
-  color: #00e5ff;
-  text-shadow: 0 0 18px rgba(0, 229, 255, 0.45);
+  color: #36bfd4;
+  text-shadow: 0 0 18px rgba(54, 191, 212, 0.36);
 }
 
 .neon-green {
-  color: #00ff9d;
-  text-shadow: 0 0 16px rgba(0, 255, 157, 0.42);
+  color: #2ee88f;
+  text-shadow: 0 0 16px rgba(46, 232, 143, 0.34);
 }
 
 .neon-purple {
-  color: #d946ef;
-  text-shadow: 0 0 18px rgba(217, 70, 239, 0.52);
+  color: #8a7dff;
+  text-shadow: 0 0 18px rgba(74, 63, 184, 0.42);
 }
 
 .neon-amber {
-  color: #ff9f1c;
-  text-shadow: 0 0 16px rgba(255, 159, 28, 0.42);
+  color: #a77b44;
+  text-shadow: 0 0 16px rgba(167, 123, 68, 0.34);
 }
 
 .line-number {
@@ -226,7 +227,7 @@ textarea {
 
 .minimap {
   background:
-    repeating-linear-gradient(180deg, #ff2f92 0 2px, #00ff9d 2px 4px, #00e5ff 4px 6px, #ff9f1c 6px 8px, transparent 8px 12px),
+    repeating-linear-gradient(180deg, #3f7cff 0 2px, #2ee88f 2px 4px, #36bfd4 4px 6px, #a77b44 6px 8px, transparent 8px 12px),
     #050509;
   opacity: 0.58;
 }

@@ -35,10 +35,10 @@ function asset(path: string) {
 }
 
 const tokenPillClasses = [
-  "border-racing/35 bg-racing/10 text-racing shadow-[0_0_24px_rgba(255,47,146,0.12)]",
-  "border-electric/35 bg-electric/10 text-electric shadow-[0_0_24px_rgba(0,229,255,0.12)]",
-  "border-volt/35 bg-volt/10 text-volt shadow-[0_0_24px_rgba(0,255,157,0.12)]",
-  "border-amber/35 bg-amber/10 text-amber shadow-[0_0_24px_rgba(255,159,28,0.12)]"
+  "border-racing/35 bg-racing/10 text-racing shadow-[0_0_24px_rgba(63,124,255,0.1)]",
+  "border-electric/35 bg-electric/10 text-electric shadow-[0_0_24px_rgba(54,191,212,0.1)]",
+  "border-volt/35 bg-volt/10 text-volt shadow-[0_0_24px_rgba(46,232,143,0.1)]",
+  "border-amber/35 bg-amber/10 text-amber shadow-[0_0_24px_rgba(167,123,68,0.1)]"
 ];
 
 function fadeUp(delay = 0): MotionProps {
@@ -111,10 +111,10 @@ export function Header({
   onLanguageChange: () => void;
 }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-electric/20 bg-black/88 font-mono shadow-[0_0_36px_rgba(0,229,255,0.08)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-electric/20 bg-black/88 font-mono shadow-[0_0_36px_rgba(54,191,212,0.07)] backdrop-blur-xl">
       <div className="editor-chrome mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#hero" className="focus-ring flex items-center gap-3" aria-label="Go to hero">
-          <span className="grid h-9 w-9 place-items-center border border-volt/40 bg-volt/10 text-sm font-black text-volt shadow-[0_0_18px_rgba(0,255,157,0.22)] [clip-path:polygon(0_0,80%_0,100%_20%,100%_100%,20%_100%,0_80%)]">
+          <span className="grid h-9 w-9 place-items-center border border-volt/40 bg-volt/10 text-sm font-black text-volt shadow-[0_0_18px_rgba(46,232,143,0.18)] [clip-path:polygon(0_0,80%_0,100%_20%,100%_100%,20%_100%,0_80%)]">
             .jb
           </span>
           <span className="hidden text-xs font-black uppercase tracking-[0.16em] text-white sm:block">
@@ -149,7 +149,7 @@ export function Header({
           </button>
           <a
             href="#contact"
-            className="focus-ring hidden h-10 items-center gap-2 border border-racing/35 bg-racing/10 px-4 text-xs font-black uppercase tracking-[0.14em] text-racing shadow-[0_0_22px_rgba(255,47,146,0.14)] transition hover:bg-racing hover:text-white sm:inline-flex"
+            className="focus-ring hidden h-10 items-center gap-2 border border-racing/35 bg-racing/10 px-4 text-xs font-black uppercase tracking-[0.14em] text-racing shadow-[0_0_22px_rgba(63,124,255,0.12)] transition hover:bg-racing hover:text-white sm:inline-flex"
           >
             <Mail size={16} aria-hidden />
             Contact
@@ -175,24 +175,24 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
   return (
     <section
       id="hero"
-      className="diagonal-slice relative flex min-h-screen items-center overflow-hidden bg-black pt-24"
+      className="diagonal-slice relative flex min-h-screen items-center overflow-hidden bg-black py-24"
     >
       <div className="precision-grid absolute inset-0 opacity-70" aria-hidden />
       <div className="absolute inset-x-0 top-16 h-px bg-electric/25" aria-hidden />
       <div className="absolute bottom-0 left-0 h-28 w-full bg-gradient-to-t from-ink to-transparent" />
 
-      <div className="section-shell grid items-center gap-12 pb-16 lg:grid-cols-[1.02fr_0.98fr]">
+      <div className="section-shell relative z-10 flex flex-col items-center gap-8 text-center">
         <motion.div
-          initial={{ opacity: 0, x: -42 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="code-panel angled-card relative z-10 overflow-hidden p-5 sm:p-7 lg:p-8"
+          className="code-panel angled-card w-full max-w-6xl overflow-hidden p-5 sm:p-7 lg:p-8"
         >
           <div className="editor-chrome -mx-5 -mt-5 mb-7 flex items-center justify-between gap-4 px-5 py-3 sm:-mx-7 sm:-mt-7 sm:px-7 lg:-mx-8 lg:-mt-8 lg:px-8">
             <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-racing shadow-[0_0_14px_rgba(255,47,146,0.78)]" />
-              <span className="h-3 w-3 rounded-full bg-amber shadow-[0_0_14px_rgba(255,159,28,0.66)]" />
-              <span className="h-3 w-3 rounded-full bg-volt shadow-[0_0_14px_rgba(0,255,157,0.66)]" />
+              <span className="h-3 w-3 rounded-full bg-racing shadow-[0_0_14px_rgba(63,124,255,0.58)]" />
+              <span className="h-3 w-3 rounded-full bg-amber shadow-[0_0_14px_rgba(167,123,68,0.5)]" />
+              <span className="h-3 w-3 rounded-full bg-volt shadow-[0_0_14px_rgba(46,232,143,0.52)]" />
             </div>
             <p className="text-xs font-black uppercase tracking-[0.18em] text-white/58">
               hero.profile.tsx
@@ -204,7 +204,7 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
               <p>
                 <span className="line-number mr-4">01</span>
                 <span className="neon-purple">import</span>
-                <span className="text-white/55"> {"{"} ambition, data, automation {"}"} </span>
+                <span className="text-white/55"> {"{"} precision, data, automation {"}"} </span>
                 <span className="neon-purple">from</span>
                 <span className="neon-green"> "talent-intelligence"</span>
               </p>
@@ -221,64 +221,9 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
               <span className="terminal-cursor">{content.hero.eyebrow}</span>
             </div>
 
-            <h1 className="hero-name max-w-5xl font-black uppercase">
+            <h1 className="hero-name mx-auto max-w-full text-center font-black uppercase">
               {content.hero.name}
             </h1>
-
-            <div className="my-6 flex flex-wrap gap-2">
-              {content.hero.roles.map((role, index) => (
-                <span
-                  key={role}
-                  className={`border px-3 py-2 text-xs font-black uppercase tracking-[0.12em] ${tokenPillClasses[index % tokenPillClasses.length]}`}
-                >
-                  <span className="text-white/42">{"<"}</span>
-                  {role}
-                  <span className="text-white/42">{" />"}</span>
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#projects"
-                className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_0_28px_rgba(255,47,146,0.24)] transition hover:bg-electric hover:text-ink"
-              >
-                {content.hero.ctas.projects}
-                <ArrowRight size={18} aria-hidden />
-              </a>
-              <a
-                href={asset(portfolioData.shared.cvPath)}
-                download
-                className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-electric/30 bg-electric/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-electric transition hover:border-electric hover:bg-electric hover:text-ink"
-              >
-                {content.hero.ctas.cv}
-                <Download size={18} aria-hidden />
-              </a>
-              <a
-                href="#contact"
-                className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-volt/30 bg-volt/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-volt transition hover:border-volt hover:bg-volt hover:text-ink"
-              >
-                {content.hero.ctas.contact}
-                <ArrowDown size={18} aria-hidden />
-              </a>
-            </div>
-
-            <p className="neon-title mt-7 text-balance max-w-3xl text-2xl font-black uppercase leading-tight text-white sm:text-3xl">
-              {content.hero.value}
-            </p>
-
-            <p className="mt-5 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
-              <span className="line-number mr-3">03</span>
-              <span className="neon-purple">return</span>
-              <span className="text-white/55"> (</span>
-              {content.hero.summary}
-              <span className="text-white/55">)</span>
-            </p>
-
-            <div className="mt-8 flex items-center gap-3 text-sm font-bold text-white/70">
-              <ShieldCheck size={18} className="text-volt" aria-hidden />
-              <span className="neon-green">{content.hero.status}</span>
-            </div>
           </div>
         </motion.div>
 
@@ -286,7 +231,7 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
           initial={{ opacity: 0, scale: 0.94, x: 28 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
-          className="relative z-10"
+          className="relative w-full max-w-3xl"
         >
           <div className="absolute -inset-6 -z-10 bg-racing/10 blur-3xl" aria-hidden />
           <div className="code-panel angled-card relative overflow-hidden shadow-premium backdrop-blur">
@@ -301,20 +246,20 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
               </div>
             </div>
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-ink via-transparent to-transparent" />
-            <div className="absolute inset-0 z-10 mix-blend-screen opacity-50 [background:linear-gradient(115deg,transparent_0_42%,rgba(0,229,255,.42)_42.2%,transparent_43%,transparent_68%,rgba(255,47,146,.5)_68.2%,transparent_69%)]" />
+            <div className="absolute inset-0 z-10 mix-blend-screen opacity-40 [background:linear-gradient(115deg,transparent_0_42%,rgba(54,191,212,.32)_42.2%,transparent_43%,transparent_68%,rgba(63,124,255,.34)_68.2%,transparent_69%)]" />
             <div className="minimap absolute bottom-24 right-4 z-20 hidden h-52 w-8 border border-white/10 sm:block" aria-hidden />
             <Image
               src={asset(photo.src)}
               alt={photo.alt}
-              width={1800}
-              height={1350}
+              width={1448}
+              height={1086}
               priority
-              className={`h-[min(72vh,760px)] min-h-[440px] w-full object-cover ${
+              className={`aspect-[4/3] w-full object-cover object-center ${
                 photo.treatment === "performance"
                   ? "contrast-125 saturate-0 brightness-90"
-                  : "contrast-115 saturate-0"
+                  : "contrast-105 saturate-[0.9] brightness-95"
               }`}
-              sizes="(min-width: 1024px) 48vw, 100vw"
+              sizes="(min-width: 1024px) 760px, 92vw"
             />
 
             <div className="absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between gap-4 p-5 sm:p-7">
@@ -349,19 +294,81 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
             </div>
           </div>
         </motion.div>
-      </div>
 
-      <div className="code-panel absolute bottom-6 left-1/2 z-20 hidden w-[min(92vw,980px)] -translate-x-1/2 grid-cols-4 overflow-hidden backdrop-blur-xl lg:grid">
-        {content.stats.map((stat, index) => (
-          <div key={stat.label} className="relative z-10 border-r border-electric/15 p-5 last:border-r-0">
-            <p className={index % 2 === 0 ? "text-3xl font-black neon-green" : "text-3xl font-black neon-pink"}>
-              {stat.value}
-            </p>
-            <p className="mt-1 text-xs font-bold uppercase leading-5 tracking-[0.12em] text-white/62">
-              {stat.label}
-            </p>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          className="relative z-10 flex w-full max-w-5xl flex-col items-center"
+        >
+          <div className="flex flex-wrap justify-center gap-2">
+            {content.hero.roles.map((role, index) => (
+              <span
+                key={role}
+                className={`border px-3 py-2 text-xs font-black uppercase tracking-[0.12em] ${tokenPillClasses[index % tokenPillClasses.length]}`}
+              >
+                <span className="text-white/42">{"<"}</span>
+                {role}
+                <span className="text-white/42">{" />"}</span>
+              </span>
+            ))}
           </div>
-        ))}
+
+          <div className="mt-6 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+            <a
+              href="#projects"
+              className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_0_28px_rgba(63,124,255,0.18)] transition hover:bg-electric hover:text-ink"
+            >
+              {content.hero.ctas.projects}
+              <ArrowRight size={18} aria-hidden />
+            </a>
+            <a
+              href={asset(portfolioData.shared.cvPath)}
+              download
+              className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-electric/30 bg-electric/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-electric transition hover:border-electric hover:bg-electric hover:text-ink"
+            >
+              {content.hero.ctas.cv}
+              <Download size={18} aria-hidden />
+            </a>
+            <a
+              href="#contact"
+              className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-volt/30 bg-volt/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-volt transition hover:border-volt hover:bg-volt hover:text-ink"
+            >
+              {content.hero.ctas.contact}
+              <ArrowDown size={18} aria-hidden />
+            </a>
+          </div>
+
+          <p className="neon-title mt-7 text-balance max-w-3xl text-2xl font-black uppercase leading-tight text-white sm:text-3xl">
+            {content.hero.value}
+          </p>
+
+          <p className="mt-5 max-w-3xl text-base leading-8 text-white/70 sm:text-lg">
+            <span className="line-number mr-3">03</span>
+            <span className="neon-purple">return</span>
+            <span className="text-white/55"> (</span>
+            {content.hero.summary}
+            <span className="text-white/55">)</span>
+          </p>
+
+          <div className="mt-8 flex items-center justify-center gap-3 text-sm font-bold text-white/70">
+            <ShieldCheck size={18} className="text-volt" aria-hidden />
+            <span className="neon-green">{content.hero.status}</span>
+          </div>
+        </motion.div>
+
+        <div className="code-panel grid w-full max-w-5xl grid-cols-1 overflow-hidden backdrop-blur-xl sm:grid-cols-2 lg:grid-cols-4">
+          {content.stats.map((stat, index) => (
+            <div key={stat.label} className="relative z-10 border-b border-electric/15 p-5 last:border-b-0 sm:border-r sm:last:border-r-0 lg:border-b-0">
+              <p className={index % 2 === 0 ? "text-3xl font-black neon-green" : "text-3xl font-black neon-pink"}>
+                {stat.value}
+              </p>
+              <p className="mt-1 text-xs font-bold uppercase leading-5 tracking-[0.12em] text-white/62">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -402,7 +409,7 @@ export function AboutSection({ content }: { content: PortfolioContent }) {
             ))}
           </div>
 
-          <div className="relative z-10 border-l-4 border-volt bg-volt/10 p-6 shadow-[0_0_24px_rgba(0,255,157,0.08)]">
+          <div className="relative z-10 border-l-4 border-volt bg-volt/10 p-6 shadow-[0_0_24px_rgba(46,232,143,0.08)]">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-volt">
               {content.about.opportunitiesTitle}
             </p>
@@ -765,7 +772,7 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
           </label>
           <button
             type="submit"
-            className="focus-ring relative z-10 mt-6 inline-flex w-full items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.16em] text-white shadow-[0_0_28px_rgba(255,47,146,0.24)] transition hover:bg-volt hover:text-ink"
+            className="focus-ring relative z-10 mt-6 inline-flex w-full items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.16em] text-white shadow-[0_0_28px_rgba(63,124,255,0.18)] transition hover:bg-volt hover:text-ink"
           >
             <Send size={18} aria-hidden />
             {content.contact.form.submit}

@@ -100,10 +100,10 @@ const shared = {
 const photos: Localized<PortfolioContent["photos"]> = {
   en: [
     {
-      src: "/images/jesus-formal.jpg",
-      alt: "Formal professional portrait of Jesús Gonzalo Barba García in business attire.",
-      label: "Executive portrait",
-      caption: "Formal profile version",
+      src: "/images/jesus-corporate.jpg",
+      alt: "Corporate portrait of Jesús Gonzalo Barba García in a navy suit.",
+      label: "Corporate portrait",
+      caption: "Executive signal",
       treatment: "original"
     },
     {
@@ -116,10 +116,10 @@ const photos: Localized<PortfolioContent["photos"]> = {
   ],
   es: [
     {
-      src: "/images/jesus-formal.jpg",
-      alt: "Retrato profesional formal de Jesús Gonzalo Barba García con vestimenta ejecutiva.",
-      label: "Retrato ejecutivo",
-      caption: "Versión formal de perfil",
+      src: "/images/jesus-corporate.jpg",
+      alt: "Retrato corporativo de Jesús Gonzalo Barba García con terno azul.",
+      label: "Retrato corporativo",
+      caption: "Señal ejecutiva",
       treatment: "original"
     },
     {
