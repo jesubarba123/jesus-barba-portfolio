@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import type { MotionProps } from "framer-motion";
 import {
@@ -163,14 +163,6 @@ export function Header({
 export function HeroSection({ content, lang }: { content: PortfolioContent; lang: Lang }) {
   const [active, setActive] = useState(0);
   const photo = content.photos[active];
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActive((current) => (current + 1) % content.photos.length);
-    }, 8500);
-
-    return () => window.clearInterval(timer);
-  }, [content.photos.length]);
 
   return (
     <section
