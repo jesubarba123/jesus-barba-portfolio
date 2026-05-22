@@ -34,6 +34,13 @@ function asset(path: string) {
   return `${basePath}${path}`;
 }
 
+const tokenPillClasses = [
+  "border-racing/35 bg-racing/10 text-racing shadow-[0_0_24px_rgba(255,47,146,0.12)]",
+  "border-electric/35 bg-electric/10 text-electric shadow-[0_0_24px_rgba(0,229,255,0.12)]",
+  "border-volt/35 bg-volt/10 text-volt shadow-[0_0_24px_rgba(0,255,157,0.12)]",
+  "border-amber/35 bg-amber/10 text-amber shadow-[0_0_24px_rgba(255,159,28,0.12)]"
+];
+
 function fadeUp(delay = 0): MotionProps {
   return {
     initial: { opacity: 0, y: 28 },
@@ -57,10 +64,13 @@ function SectionHeading({
       {...fadeUp()}
       className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}
     >
-      <p className="mb-3 text-xs font-black uppercase tracking-[0.34em] text-ignition">
-        {kicker}
+      <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-white/70">
+        <span className="line-number mr-3">const</span>
+        <span className="neon-cyan">section</span>
+        <span className="text-white/44"> = </span>
+        <span className="neon-green">"{kicker}"</span>
       </p>
-      <h2 className="text-balance text-4xl font-black uppercase leading-[0.94] text-white sm:text-5xl lg:text-6xl">
+      <h2 className="neon-title text-balance text-4xl font-black uppercase leading-[0.94] text-white sm:text-5xl lg:text-6xl">
         {title}
       </h2>
     </motion.div>
@@ -101,14 +111,16 @@ export function Header({
   onLanguageChange: () => void;
 }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/72 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-electric/20 bg-black/88 font-mono shadow-[0_0_36px_rgba(0,229,255,0.08)] backdrop-blur-xl">
+      <div className="editor-chrome mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#hero" className="focus-ring flex items-center gap-3" aria-label="Go to hero">
-          <span className="grid h-9 w-9 place-items-center bg-white text-sm font-black text-ink [clip-path:polygon(0_0,80%_0,100%_20%,100%_100%,20%_100%,0_80%)]">
-            JB
+          <span className="grid h-9 w-9 place-items-center border border-volt/40 bg-volt/10 text-sm font-black text-volt shadow-[0_0_18px_rgba(0,255,157,0.22)] [clip-path:polygon(0_0,80%_0,100%_20%,100%_100%,20%_100%,0_80%)]">
+            .jb
           </span>
-          <span className="hidden text-xs font-black uppercase tracking-[0.24em] text-white sm:block">
-            Talent Intelligence
+          <span className="hidden text-xs font-black uppercase tracking-[0.16em] text-white sm:block">
+            <span className="neon-pink">portfolio</span>
+            <span className="text-white/42">.</span>
+            <span className="neon-cyan">tsx</span>
           </span>
         </a>
 
@@ -117,8 +129,9 @@ export function Header({
             <a
               key={item.href}
               href={item.href}
-              className="focus-ring text-xs font-bold uppercase tracking-[0.18em] text-white/68 transition hover:text-white"
+              className="focus-ring text-xs font-bold uppercase tracking-[0.12em] text-white/62 transition hover:text-electric"
             >
+              <span className="text-racing">#</span>
               {item.label}
             </a>
           ))}
@@ -126,7 +139,7 @@ export function Header({
 
         <div className="flex items-center gap-2">
           <button
-            className="focus-ring inline-flex h-10 items-center gap-2 border border-white/15 px-3 text-xs font-black uppercase tracking-[0.18em] text-white transition hover:border-ignition hover:text-ignition"
+            className="focus-ring inline-flex h-10 items-center gap-2 border border-electric/25 bg-electric/10 px-3 text-xs font-black uppercase tracking-[0.14em] text-electric transition hover:border-volt hover:text-volt"
             type="button"
             onClick={onLanguageChange}
             aria-label={lang === "en" ? "Switch to Spanish" : "Cambiar a inglés"}
@@ -136,7 +149,7 @@ export function Header({
           </button>
           <a
             href="#contact"
-            className="focus-ring hidden h-10 items-center gap-2 bg-racing px-4 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:bg-ignition hover:text-ink sm:inline-flex"
+            className="focus-ring hidden h-10 items-center gap-2 border border-racing/35 bg-racing/10 px-4 text-xs font-black uppercase tracking-[0.14em] text-racing shadow-[0_0_22px_rgba(255,47,146,0.14)] transition hover:bg-racing hover:text-white sm:inline-flex"
           >
             <Mail size={16} aria-hidden />
             Contact
@@ -162,10 +175,10 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
   return (
     <section
       id="hero"
-      className="diagonal-slice relative flex min-h-screen items-center overflow-hidden pt-24"
+      className="diagonal-slice relative flex min-h-screen items-center overflow-hidden bg-black pt-24"
     >
-      <div className="precision-grid absolute inset-0 opacity-60" aria-hidden />
-      <div className="absolute inset-x-0 top-16 h-px bg-white/10" aria-hidden />
+      <div className="precision-grid absolute inset-0 opacity-70" aria-hidden />
+      <div className="absolute inset-x-0 top-16 h-px bg-electric/25" aria-hidden />
       <div className="absolute bottom-0 left-0 h-28 w-full bg-gradient-to-t from-ink to-transparent" />
 
       <div className="section-shell grid items-center gap-12 pb-16 lg:grid-cols-[1.02fr_0.98fr]">
@@ -173,64 +186,99 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
           initial={{ opacity: 0, x: -42 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10"
+          className="code-panel angled-card relative z-10 overflow-hidden p-5 sm:p-7 lg:p-8"
         >
-          <div className="mb-7 inline-flex items-center gap-3 border border-white/12 bg-white/[0.04] px-4 py-2 text-xs font-black uppercase tracking-[0.25em] text-white/72 backdrop-blur-xl">
-            <Zap size={16} className="text-ignition" aria-hidden />
-            {content.hero.eyebrow}
+          <div className="editor-chrome -mx-5 -mt-5 mb-7 flex items-center justify-between gap-4 px-5 py-3 sm:-mx-7 sm:-mt-7 sm:px-7 lg:-mx-8 lg:-mt-8 lg:px-8">
+            <div className="flex items-center gap-2">
+              <span className="h-3 w-3 rounded-full bg-racing shadow-[0_0_14px_rgba(255,47,146,0.78)]" />
+              <span className="h-3 w-3 rounded-full bg-amber shadow-[0_0_14px_rgba(255,159,28,0.66)]" />
+              <span className="h-3 w-3 rounded-full bg-volt shadow-[0_0_14px_rgba(0,255,157,0.66)]" />
+            </div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-white/58">
+              hero.profile.tsx
+            </p>
           </div>
 
-          <h1 className="hero-name max-w-5xl font-black uppercase text-white">
-            {content.hero.name}
-          </h1>
+          <div className="relative z-10">
+            <div className="mb-5 grid gap-1 text-xs font-bold uppercase tracking-[0.14em] sm:text-sm">
+              <p>
+                <span className="line-number mr-4">01</span>
+                <span className="neon-purple">import</span>
+                <span className="text-white/55"> {"{"} ambition, data, automation {"}"} </span>
+                <span className="neon-purple">from</span>
+                <span className="neon-green"> "talent-intelligence"</span>
+              </p>
+              <p>
+                <span className="line-number mr-4">02</span>
+                <span className="neon-cyan">const</span>
+                <span className="text-white/55"> signal = </span>
+                <span className="neon-green">"{content.hero.eyebrow}"</span>
+              </p>
+            </div>
 
-          <div className="my-6 flex flex-wrap gap-2">
-            {content.hero.roles.map((role) => (
-              <span
-                key={role}
-                className="border border-white/14 bg-white/[0.045] px-3 py-2 text-xs font-black uppercase tracking-[0.16em] text-white/82"
+            <div className="mb-7 inline-flex items-center gap-3 border border-electric/25 bg-electric/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-electric backdrop-blur-xl">
+              <Zap size={16} className="text-volt" aria-hidden />
+              <span className="terminal-cursor">{content.hero.eyebrow}</span>
+            </div>
+
+            <h1 className="hero-name max-w-5xl font-black uppercase">
+              {content.hero.name}
+            </h1>
+
+            <div className="my-6 flex flex-wrap gap-2">
+              {content.hero.roles.map((role, index) => (
+                <span
+                  key={role}
+                  className={`border px-3 py-2 text-xs font-black uppercase tracking-[0.12em] ${tokenPillClasses[index % tokenPillClasses.length]}`}
+                >
+                  <span className="text-white/42">{"<"}</span>
+                  {role}
+                  <span className="text-white/42">{" />"}</span>
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#projects"
+                className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_0_28px_rgba(255,47,146,0.24)] transition hover:bg-electric hover:text-ink"
               >
-                {role}
-              </span>
-            ))}
-          </div>
+                {content.hero.ctas.projects}
+                <ArrowRight size={18} aria-hidden />
+              </a>
+              <a
+                href={asset(portfolioData.shared.cvPath)}
+                download
+                className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-electric/30 bg-electric/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-electric transition hover:border-electric hover:bg-electric hover:text-ink"
+              >
+                {content.hero.ctas.cv}
+                <Download size={18} aria-hidden />
+              </a>
+              <a
+                href="#contact"
+                className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-volt/30 bg-volt/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-volt transition hover:border-volt hover:bg-volt hover:text-ink"
+              >
+                {content.hero.ctas.contact}
+                <ArrowDown size={18} aria-hidden />
+              </a>
+            </div>
 
-          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-            <a
-              href="#projects"
-              className="focus-ring inline-flex h-13 items-center justify-center gap-3 bg-ignition px-6 py-4 text-sm font-black uppercase tracking-[0.18em] text-ink transition hover:bg-white"
-            >
-              {content.hero.ctas.projects}
-              <ArrowRight size={18} aria-hidden />
-            </a>
-            <a
-              href={asset(portfolioData.shared.cvPath)}
-              download
-              className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-white/18 px-6 py-4 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:border-racing hover:text-racing"
-            >
-              {content.hero.ctas.cv}
-              <Download size={18} aria-hidden />
-            </a>
-            <a
-              href="#contact"
-              className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-white/18 px-6 py-4 text-sm font-black uppercase tracking-[0.18em] text-white transition hover:border-volt hover:text-volt"
-            >
-              {content.hero.ctas.contact}
-              <ArrowDown size={18} aria-hidden />
-            </a>
-          </div>
+            <p className="neon-title mt-7 text-balance max-w-3xl text-2xl font-black uppercase leading-tight text-white sm:text-3xl">
+              {content.hero.value}
+            </p>
 
-          <p className="mt-7 text-balance max-w-3xl text-2xl font-black uppercase leading-tight text-white sm:text-3xl">
-            {content.hero.value}
-          </p>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-white/70 sm:text-lg">
+              <span className="line-number mr-3">03</span>
+              <span className="neon-purple">return</span>
+              <span className="text-white/55"> (</span>
+              {content.hero.summary}
+              <span className="text-white/55">)</span>
+            </p>
 
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/68 sm:text-lg">
-            {content.hero.summary}
-          </p>
-
-          <div className="mt-8 flex items-center gap-3 text-sm font-bold text-white/62">
-            <ShieldCheck size={18} className="text-volt" aria-hidden />
-            {content.hero.status}
+            <div className="mt-8 flex items-center gap-3 text-sm font-bold text-white/70">
+              <ShieldCheck size={18} className="text-volt" aria-hidden />
+              <span className="neon-green">{content.hero.status}</span>
+            </div>
           </div>
         </motion.div>
 
@@ -240,10 +288,21 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
           transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
           className="relative z-10"
         >
-          <div className="absolute -inset-6 -z-10 bg-racing/20 blur-3xl" aria-hidden />
-          <div className="angled-card relative overflow-hidden border border-white/16 bg-white/[0.045] shadow-premium backdrop-blur">
+          <div className="absolute -inset-6 -z-10 bg-racing/10 blur-3xl" aria-hidden />
+          <div className="code-panel angled-card relative overflow-hidden shadow-premium backdrop-blur">
+            <div className="editor-chrome relative z-20 flex items-center justify-between px-5 py-3">
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-electric">
+                portrait.render.jpg
+              </p>
+              <div className="flex gap-1">
+                <span className="h-2 w-2 bg-racing" />
+                <span className="h-2 w-2 bg-electric" />
+                <span className="h-2 w-2 bg-volt" />
+              </div>
+            </div>
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-ink via-transparent to-transparent" />
-            <div className="absolute inset-0 z-10 mix-blend-screen opacity-40 [background:linear-gradient(115deg,transparent_0_42%,rgba(247,181,0,.45)_42.2%,transparent_43%,transparent_68%,rgba(242,48,48,.5)_68.2%,transparent_69%)]" />
+            <div className="absolute inset-0 z-10 mix-blend-screen opacity-50 [background:linear-gradient(115deg,transparent_0_42%,rgba(0,229,255,.42)_42.2%,transparent_43%,transparent_68%,rgba(255,47,146,.5)_68.2%,transparent_69%)]" />
+            <div className="minimap absolute bottom-24 right-4 z-20 hidden h-52 w-8 border border-white/10 sm:block" aria-hidden />
             <Image
               src={asset(photo.src)}
               alt={photo.alt}
@@ -253,22 +312,22 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
               className={`h-[min(72vh,760px)] min-h-[440px] w-full object-cover ${
                 photo.treatment === "performance"
                   ? "contrast-125 saturate-0 brightness-90"
-                  : "contrast-110 saturate-0"
+                  : "contrast-115 saturate-0"
               }`}
               sizes="(min-width: 1024px) 48vw, 100vw"
             />
 
             <div className="absolute bottom-0 left-0 right-0 z-20 flex items-end justify-between gap-4 p-5 sm:p-7">
               <div>
-                <p className="text-xs font-black uppercase tracking-[0.28em] text-ignition">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-electric">
                   {photo.label}
                 </p>
-                <p className="mt-2 text-2xl font-black uppercase text-white">{photo.caption}</p>
+                <p className="neon-title mt-2 text-2xl font-black uppercase text-white">{photo.caption}</p>
               </div>
               <div className="flex gap-2" aria-label={content.hero.carouselHint}>
                 <button
                   type="button"
-                  className="focus-ring grid h-11 w-11 place-items-center border border-white/18 bg-ink/70 text-white transition hover:border-ignition hover:text-ignition"
+                  className="focus-ring grid h-11 w-11 place-items-center border border-electric/30 bg-ink/80 text-electric transition hover:border-volt hover:text-volt"
                   onClick={() =>
                     setActive((current) =>
                       current === 0 ? content.photos.length - 1 : current - 1
@@ -280,7 +339,7 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
                 </button>
                 <button
                   type="button"
-                  className="focus-ring grid h-11 w-11 place-items-center border border-white/18 bg-ink/70 text-white transition hover:border-ignition hover:text-ignition"
+                  className="focus-ring grid h-11 w-11 place-items-center border border-electric/30 bg-ink/80 text-electric transition hover:border-volt hover:text-volt"
                   onClick={() => setActive((current) => (current + 1) % content.photos.length)}
                   aria-label={lang === "en" ? "Next portrait" : "Siguiente retrato"}
                 >
@@ -292,11 +351,13 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
         </motion.div>
       </div>
 
-      <div className="absolute bottom-6 left-1/2 z-20 hidden w-[min(92vw,980px)] -translate-x-1/2 grid-cols-4 border border-white/10 bg-ink/76 backdrop-blur-xl lg:grid">
+      <div className="code-panel absolute bottom-6 left-1/2 z-20 hidden w-[min(92vw,980px)] -translate-x-1/2 grid-cols-4 overflow-hidden backdrop-blur-xl lg:grid">
         {content.stats.map((stat, index) => (
-          <div key={stat.label} className="border-r border-white/10 p-5 last:border-r-0">
-            <p className="text-3xl font-black text-white">{stat.value}</p>
-            <p className="mt-1 text-xs font-bold uppercase leading-5 tracking-[0.15em] text-white/54">
+          <div key={stat.label} className="relative z-10 border-r border-electric/15 p-5 last:border-r-0">
+            <p className={index % 2 === 0 ? "text-3xl font-black neon-green" : "text-3xl font-black neon-pink"}>
+              {stat.value}
+            </p>
+            <p className="mt-1 text-xs font-bold uppercase leading-5 tracking-[0.12em] text-white/62">
               {stat.label}
             </p>
           </div>
@@ -308,14 +369,20 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
 
 export function AboutSection({ content }: { content: PortfolioContent }) {
   return (
-    <section id="about" className="section-y relative border-t border-white/10">
+    <section id="about" className="section-y relative border-t border-electric/15">
       <div className="section-shell grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
         <SectionHeading kicker={content.about.kicker} title={content.about.title} />
 
-        <motion.div {...fadeUp(0.08)} className="space-y-8">
+        <motion.div {...fadeUp(0.08)} className="code-panel angled-card space-y-8 overflow-hidden p-5 sm:p-7">
           <div className="space-y-5 text-lg leading-9 text-white/70">
-            {content.about.body.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {content.about.body.map((paragraph, index) => (
+              <p key={paragraph} className="relative z-10">
+                <span className="line-number mr-4">{String(index + 4).padStart(2, "0")}</span>
+                <span className={index === 0 ? "neon-green" : index === 1 ? "neon-cyan" : "neon-pink"}>
+                  //
+                </span>{" "}
+                {paragraph}
+              </p>
             ))}
           </div>
 
@@ -323,20 +390,20 @@ export function AboutSection({ content }: { content: PortfolioContent }) {
             {content.about.strengths.map((strength, index) => (
               <div
                 key={strength}
-                className="border border-white/10 bg-white/[0.035] p-5 backdrop-blur transition hover:border-ignition/70"
+                className="relative z-10 border border-electric/15 bg-black/55 p-5 backdrop-blur transition hover:border-racing/70 hover:shadow-glow"
               >
-                <p className="text-xs font-black uppercase tracking-[0.28em] text-white/36">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-white/40">
                   0{index + 1}
                 </p>
-                <p className="mt-5 text-lg font-black uppercase leading-tight text-white">
+                <p className="neon-title mt-5 text-lg font-black uppercase leading-tight">
                   {strength}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="border-l-4 border-racing bg-racing/10 p-6">
-            <p className="text-xs font-black uppercase tracking-[0.24em] text-racing">
+          <div className="relative z-10 border-l-4 border-volt bg-volt/10 p-6 shadow-[0_0_24px_rgba(0,255,157,0.08)]">
+            <p className="text-xs font-black uppercase tracking-[0.2em] text-volt">
               {content.about.opportunitiesTitle}
             </p>
             <p className="mt-3 text-base leading-7 text-white/76">{content.about.opportunities}</p>
@@ -349,7 +416,7 @@ export function AboutSection({ content }: { content: PortfolioContent }) {
 
 export function ExperienceSection({ content }: { content: PortfolioContent }) {
   return (
-    <section id="experience" className="section-y relative bg-white/[0.025]">
+    <section id="experience" className="section-y relative bg-black/60">
       <div className="section-shell">
         <SectionHeading kicker={content.experience.kicker} title={content.experience.title} />
 
@@ -358,33 +425,35 @@ export function ExperienceSection({ content }: { content: PortfolioContent }) {
             <motion.article
               key={`${item.company}-${item.role}`}
               {...fadeUp(index * 0.05)}
-              className="grid gap-6 border border-white/10 bg-ink/68 p-5 backdrop-blur-xl transition hover:border-ignition/60 lg:grid-cols-[0.34fr_0.66fr]"
+              className="code-panel angled-card grid gap-6 overflow-hidden p-5 backdrop-blur-xl transition hover:border-racing/60 hover:shadow-glow lg:grid-cols-[0.34fr_0.66fr]"
             >
-              <div className="border-b border-white/10 pb-5 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6">
-                <p className="text-xs font-black uppercase tracking-[0.28em] text-ignition">
+              <div className="relative z-10 border-b border-electric/15 pb-5 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-6">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-amber">
                   {item.period}
                 </p>
-                <h3 className="mt-4 text-2xl font-black uppercase leading-tight text-white">
+                <h3 className="neon-title mt-4 text-2xl font-black uppercase leading-tight">
                   {item.role}
                 </h3>
-                <p className="mt-3 text-sm font-bold uppercase tracking-[0.18em] text-white/52">
+                <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-volt">
                   {item.company}
                 </p>
               </div>
 
-              <div className="grid gap-6 lg:grid-cols-[1fr_0.42fr]">
+              <div className="relative z-10 grid gap-6 lg:grid-cols-[1fr_0.42fr]">
                 <ul className="space-y-3 text-sm leading-7 text-white/68">
                   {item.bullets.map((bullet) => (
                     <li key={bullet} className="flex gap-3">
-                      <Check size={18} className="mt-1 shrink-0 text-volt" aria-hidden />
+                      <Check size={18} className="mt-1 shrink-0 text-electric" aria-hidden />
                       <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
                 <div className="space-y-3">
                   {item.highlights.map((highlight) => (
-                    <div key={highlight} className="bg-white/[0.055] p-4">
-                      <p className="text-sm font-bold leading-6 text-white">{highlight}</p>
+                    <div key={highlight} className="border border-racing/18 bg-racing/10 p-4">
+                      <p className="text-sm font-bold leading-6 text-white">
+                        <span className="neon-pink">git commit:</span> {highlight}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -413,21 +482,22 @@ export function SkillsSection({ content }: { content: PortfolioContent }) {
               <motion.article
                 key={group.title}
                 {...fadeUp(index * 0.04)}
-                className="group border border-white/10 bg-white/[0.035] p-6 transition hover:-translate-y-1 hover:border-racing/70 hover:bg-white/[0.055]"
+                className="code-panel angled-card group overflow-hidden p-6 transition hover:-translate-y-1 hover:border-volt/70"
               >
-                <div className="mb-6 flex items-center justify-between gap-4">
+                <div className="relative z-10 mb-6 flex items-center justify-between gap-4">
                   <h3 className="text-lg font-black uppercase tracking-[0.08em] text-white">
+                    <span className="line-number mr-2">{String(index + 1).padStart(2, "0")}</span>
                     {group.title}
                   </h3>
-                  <span className="grid h-11 w-11 place-items-center border border-white/12 text-ignition transition group-hover:border-racing group-hover:text-racing">
+                  <span className="grid h-11 w-11 place-items-center border border-electric/25 text-electric transition group-hover:border-racing group-hover:text-racing">
                     <Icon size={20} aria-hidden />
                   </span>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
+                <div className="relative z-10 flex flex-wrap gap-2">
+                  {group.items.map((item, itemIndex) => (
                     <span
                       key={item}
-                      className="border border-white/10 bg-ink/60 px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white/72"
+                      className={`border bg-ink/70 px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] ${tokenPillClasses[itemIndex % tokenPillClasses.length]}`}
                     >
                       {item}
                     </span>
@@ -444,7 +514,7 @@ export function SkillsSection({ content }: { content: PortfolioContent }) {
 
 export function ProjectsSection({ content }: { content: PortfolioContent }) {
   return (
-    <section id="projects" className="section-y relative bg-white/[0.025]">
+    <section id="projects" className="section-y relative bg-black/60">
       <div className="section-shell">
         <div className="grid gap-8 lg:grid-cols-[0.72fr_0.28fr] lg:items-end">
           <SectionHeading kicker={content.projects.kicker} title={content.projects.title} />
@@ -458,41 +528,52 @@ export function ProjectsSection({ content }: { content: PortfolioContent }) {
             <motion.article
               key={project.name}
               {...fadeUp(index * 0.08)}
-              className="group overflow-hidden border border-white/10 bg-ink/80 transition hover:-translate-y-1 hover:border-ignition/60 hover:shadow-glow"
+              className="code-panel angled-card group overflow-hidden transition hover:-translate-y-1 hover:border-racing/60 hover:shadow-glow"
             >
-              <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10">
+              <div className="editor-chrome relative z-20 flex items-center justify-between px-5 py-3">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-electric">
+                  projects/{project.name.toLowerCase().replace(/\s+/g, "-")}.json
+                </p>
+                <span className="text-xs font-black uppercase tracking-[0.16em] text-volt">live</span>
+              </div>
+
+              <div className="relative z-10 aspect-[16/10] overflow-hidden border-b border-electric/15">
                 <Image
                   src={asset(project.thumbnail)}
                   alt={`${project.name} visual thumbnail`}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-105"
+                  className="object-cover saturate-150 hue-rotate-[20deg] transition duration-700 group-hover:scale-105"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               </div>
 
-              <div className="p-6">
+              <div className="relative z-10 p-6">
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
-                    <p className="text-xs font-black uppercase tracking-[0.26em] text-ignition">
+                    <p className="text-xs font-black uppercase tracking-[0.18em] text-racing">
+                      <span className="line-number mr-2">{String(index + 1).padStart(2, "0")}</span>
                       Featured build
                     </p>
-                    <h3 className="mt-3 text-2xl font-black uppercase text-white">
+                    <h3 className="neon-title mt-3 text-2xl font-black uppercase">
                       {project.name}
                     </h3>
                   </div>
-                  <span className="border border-volt/30 px-3 py-2 text-xs font-black uppercase tracking-[0.16em] text-volt">
+                  <span className="border border-volt/35 bg-volt/10 px-3 py-2 text-xs font-black uppercase tracking-[0.14em] text-volt">
                     Live
                   </span>
                 </div>
 
-                <p className="mt-5 text-base leading-8 text-white/68">{project.description}</p>
-                <p className="mt-4 text-sm font-bold text-white/46">{project.signal}</p>
+                <p className="mt-5 text-base leading-8 text-white/72">
+                  <span className="neon-purple">description:</span> {project.description}
+                </p>
+                <p className="mt-4 text-sm font-bold text-electric">{project.signal}</p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
+                  {project.technologies.map((tech, techIndex) => (
                     <span
                       key={tech}
-                      className="border border-white/10 bg-white/[0.045] px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white/70"
+                      className={`border bg-black/70 px-3 py-2 text-xs font-bold uppercase tracking-[0.12em] ${tokenPillClasses[techIndex % tokenPillClasses.length]}`}
                     >
                       {tech}
                     </span>
@@ -502,7 +583,7 @@ export function ProjectsSection({ content }: { content: PortfolioContent }) {
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <ExternalAnchor
                     href={project.repo}
-                    className="focus-ring inline-flex items-center justify-center gap-2 border border-white/14 px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:border-white hover:bg-white hover:text-ink"
+                    className="focus-ring inline-flex items-center justify-center gap-2 border border-electric/25 bg-electric/10 px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-electric transition hover:border-electric hover:bg-electric hover:text-ink"
                   >
                     <GitBranch size={16} aria-hidden />
                     {content.projects.buttons.repo}
@@ -510,7 +591,7 @@ export function ProjectsSection({ content }: { content: PortfolioContent }) {
                   {project.demo ? (
                     <ExternalAnchor
                       href={project.demo}
-                      className="focus-ring inline-flex items-center justify-center gap-2 bg-racing px-4 py-3 text-xs font-black uppercase tracking-[0.16em] text-white transition hover:bg-ignition hover:text-ink"
+                      className="focus-ring inline-flex items-center justify-center gap-2 border border-racing/35 bg-racing px-4 py-3 text-xs font-black uppercase tracking-[0.14em] text-white transition hover:bg-volt hover:text-ink"
                     >
                       <ExternalLink size={16} aria-hidden />
                       {content.projects.buttons.demo}
@@ -537,29 +618,29 @@ export function EducationSection({ content }: { content: PortfolioContent }) {
             <motion.article
               key={`${item.title}-${item.institution}`}
               {...fadeUp(index * 0.035)}
-              className="border border-white/10 bg-white/[0.035] p-5 transition hover:border-ignition/60"
+              className="code-panel angled-card overflow-hidden p-5 transition hover:border-electric/60"
             >
-              <p className="text-xs font-black uppercase tracking-[0.24em] text-racing">
+              <p className="relative z-10 text-xs font-black uppercase tracking-[0.18em] text-racing">
                 {item.period}
               </p>
-              <h3 className="mt-3 text-xl font-black uppercase leading-tight text-white">
+              <h3 className="neon-title relative z-10 mt-3 text-xl font-black uppercase leading-tight">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm font-bold uppercase tracking-[0.14em] text-white/52">
+              <p className="relative z-10 mt-3 text-sm font-bold uppercase tracking-[0.14em] text-volt">
                 {item.institution}
               </p>
-              {item.note ? <p className="mt-4 text-sm leading-6 text-white/58">{item.note}</p> : null}
+              {item.note ? <p className="relative z-10 mt-4 text-sm leading-6 text-white/64">{item.note}</p> : null}
             </motion.article>
           ))}
         </div>
 
-        <motion.div {...fadeUp(0.1)} className="mt-8 border border-white/10 bg-ink/70 p-6">
-          <p className="text-xs font-black uppercase tracking-[0.24em] text-ignition">
+        <motion.div {...fadeUp(0.1)} className="code-panel angled-card mt-8 overflow-hidden p-6">
+          <p className="relative z-10 text-xs font-black uppercase tracking-[0.18em] text-electric">
             {content.education.volunteeringTitle}
           </p>
           <div className="mt-5 grid gap-3 md:grid-cols-3">
-            {content.education.volunteering.map((item) => (
-              <p key={item} className="border border-white/10 bg-white/[0.035] p-4 text-sm leading-6 text-white/68">
+            {content.education.volunteering.map((item, index) => (
+              <p key={item} className={`relative z-10 border bg-black/60 p-4 text-sm leading-6 ${tokenPillClasses[index % tokenPillClasses.length]}`}>
                 {item}
               </p>
             ))}
@@ -590,7 +671,7 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
   }
 
   return (
-    <section id="contact" className="section-y relative bg-white/[0.025]">
+    <section id="contact" className="section-y relative bg-black/60">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <SectionHeading kicker={content.contact.kicker} title={content.contact.title} />
@@ -601,31 +682,31 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
           <motion.div {...fadeUp(0.12)} className="mt-9 grid gap-3">
             <a
               href={`mailto:${content.contact.email}`}
-              className="focus-ring flex items-center gap-3 border border-white/10 bg-white/[0.035] p-4 text-white/78 transition hover:border-ignition hover:text-white"
+              className="focus-ring code-panel flex items-center gap-3 overflow-hidden p-4 text-white/78 transition hover:border-racing hover:text-white"
             >
-              <Mail size={18} className="text-ignition" aria-hidden />
-              {content.contact.email}
+              <Mail size={18} className="relative z-10 text-racing" aria-hidden />
+              <span className="relative z-10">{content.contact.email}</span>
             </a>
             <a
               href={`tel:${content.contact.phone.replace(/\s/g, "")}`}
-              className="focus-ring flex items-center gap-3 border border-white/10 bg-white/[0.035] p-4 text-white/78 transition hover:border-ignition hover:text-white"
+              className="focus-ring code-panel flex items-center gap-3 overflow-hidden p-4 text-white/78 transition hover:border-electric hover:text-white"
             >
-              <Phone size={18} className="text-ignition" aria-hidden />
-              {content.contact.phone}
+              <Phone size={18} className="relative z-10 text-electric" aria-hidden />
+              <span className="relative z-10">{content.contact.phone}</span>
             </a>
             <ExternalAnchor
               href={content.contact.linkedin}
-              className="focus-ring flex items-center gap-3 border border-white/10 bg-white/[0.035] p-4 text-white/78 transition hover:border-ignition hover:text-white"
+              className="focus-ring code-panel flex items-center gap-3 overflow-hidden p-4 text-white/78 transition hover:border-volt hover:text-white"
             >
-              <Link2 size={18} className="text-ignition" aria-hidden />
-              LinkedIn
+              <Link2 size={18} className="relative z-10 text-volt" aria-hidden />
+              <span className="relative z-10">LinkedIn</span>
             </ExternalAnchor>
             <ExternalAnchor
               href={content.contact.github}
-              className="focus-ring flex items-center gap-3 border border-white/10 bg-white/[0.035] p-4 text-white/78 transition hover:border-ignition hover:text-white"
+              className="focus-ring code-panel flex items-center gap-3 overflow-hidden p-4 text-white/78 transition hover:border-racing hover:text-white"
             >
-              <GitBranch size={18} className="text-ignition" aria-hidden />
-              GitHub
+              <GitBranch size={18} className="relative z-10 text-racing" aria-hidden />
+              <span className="relative z-10">GitHub</span>
             </ExternalAnchor>
           </motion.div>
         </div>
@@ -633,24 +714,29 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
         <motion.form
           {...fadeUp(0.08)}
           onSubmit={handleSubmit}
-          className="angled-card border border-white/12 bg-ink/82 p-5 shadow-premium backdrop-blur-xl sm:p-8"
+          className="code-panel angled-card overflow-hidden p-5 shadow-premium backdrop-blur-xl sm:p-8"
         >
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="editor-chrome -mx-5 -mt-5 mb-7 flex items-center justify-between px-5 py-3 sm:-mx-8 sm:-mt-8 sm:px-8">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-electric">contact.form.ts</p>
+            <span className="text-xs font-black uppercase tracking-[0.16em] text-volt">ready</span>
+          </div>
+
+          <div className="relative z-10 grid gap-5 sm:grid-cols-2">
             <label className="block">
-              <span className="mb-2 block text-xs font-black uppercase tracking-[0.18em] text-white/50">
+              <span className="mb-2 block text-xs font-black uppercase tracking-[0.16em] text-racing">
                 {content.contact.form.name}
               </span>
               <input
                 required
                 value={form.name}
                 onChange={(event) => setForm((current) => ({ ...current, name: event.target.value }))}
-                className="focus-ring w-full border border-white/12 bg-white/[0.045] px-4 py-4 text-white outline-none transition placeholder:text-white/28 hover:border-white/24"
+                className="focus-ring w-full border border-electric/20 bg-black/70 px-4 py-4 text-volt outline-none transition placeholder:text-white/28 hover:border-electric"
                 placeholder="Jesús Barba"
                 autoComplete="name"
               />
             </label>
             <label className="block">
-              <span className="mb-2 block text-xs font-black uppercase tracking-[0.18em] text-white/50">
+              <span className="mb-2 block text-xs font-black uppercase tracking-[0.16em] text-electric">
                 {content.contact.form.email}
               </span>
               <input
@@ -658,14 +744,14 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
                 type="email"
                 value={form.email}
                 onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
-                className="focus-ring w-full border border-white/12 bg-white/[0.045] px-4 py-4 text-white outline-none transition placeholder:text-white/28 hover:border-white/24"
+                className="focus-ring w-full border border-electric/20 bg-black/70 px-4 py-4 text-volt outline-none transition placeholder:text-white/28 hover:border-electric"
                 placeholder="name@company.com"
                 autoComplete="email"
               />
             </label>
           </div>
-          <label className="mt-5 block">
-            <span className="mb-2 block text-xs font-black uppercase tracking-[0.18em] text-white/50">
+          <label className="relative z-10 mt-5 block">
+            <span className="mb-2 block text-xs font-black uppercase tracking-[0.16em] text-volt">
               {content.contact.form.message}
             </span>
             <textarea
@@ -673,13 +759,13 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
               rows={8}
               value={form.message}
               onChange={(event) => setForm((current) => ({ ...current, message: event.target.value }))}
-              className="focus-ring min-h-48 w-full resize-y border border-white/12 bg-white/[0.045] px-4 py-4 text-white outline-none transition placeholder:text-white/28 hover:border-white/24"
+              className="focus-ring min-h-48 w-full resize-y border border-electric/20 bg-black/70 px-4 py-4 text-volt outline-none transition placeholder:text-white/28 hover:border-electric"
               placeholder="Tell me what you want to build, improve or automate."
             />
           </label>
           <button
             type="submit"
-            className="focus-ring mt-6 inline-flex w-full items-center justify-center gap-3 bg-ignition px-6 py-4 text-sm font-black uppercase tracking-[0.2em] text-ink transition hover:bg-white"
+            className="focus-ring relative z-10 mt-6 inline-flex w-full items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.16em] text-white shadow-[0_0_28px_rgba(255,47,146,0.24)] transition hover:bg-volt hover:text-ink"
           >
             <Send size={18} aria-hidden />
             {content.contact.form.submit}
@@ -697,10 +783,14 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
 
 export function Footer({ content }: { content: PortfolioContent }) {
   return (
-    <footer className="border-t border-white/10 py-8">
+    <footer className="border-t border-electric/15 bg-black py-8">
       <div className="section-shell flex flex-col gap-4 text-sm text-white/44 sm:flex-row sm:items-center sm:justify-between">
         {content.footer ? <p>{content.footer}</p> : <span aria-hidden />}
-        <p className="font-black uppercase tracking-[0.18em] text-white/60">Jesús Barba</p>
+        <p className="font-black uppercase tracking-[0.16em] text-white/70">
+          <span className="neon-pink">Jesús</span>
+          <span className="text-white/35">.</span>
+          <span className="neon-cyan">Barba</span>
+        </p>
       </div>
     </footer>
   );
