@@ -1,0 +1,28 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Dashboard thumbnail</title>
+  <desc id="desc">Premium abstract analytics dashboard visual.</desc>
+  <rect width="1600" height="1000" fill="#030303"/>
+  <path d="M0 0H1600V1000H0V0Z" fill="url(#paint0_linear)"/>
+  <path d="M120 160H1480V840H120V160Z" fill="#111214" stroke="#F4F7FB" stroke-opacity="0.14" stroke-width="4"/>
+  <path d="M206 260H552V480H206V260Z" fill="#1B1C1F" stroke="#F23030" stroke-width="4"/>
+  <path d="M628 260H980V480H628V260Z" fill="#1B1C1F" stroke="#F7B500" stroke-width="4"/>
+  <path d="M1056 260H1394V480H1056V260Z" fill="#1B1C1F" stroke="#69FFCF" stroke-opacity="0.7" stroke-width="4"/>
+  <path d="M206 560H1394V742H206V560Z" fill="#1B1C1F" stroke="#F4F7FB" stroke-opacity="0.18" stroke-width="4"/>
+  <path d="M255 424L338 360L422 390L505 310" stroke="#F23030" stroke-width="12"/>
+  <path d="M694 421L748 354L808 385L879 322L930 350" stroke="#F7B500" stroke-width="12"/>
+  <path d="M1114 420H1340" stroke="#69FFCF" stroke-width="12" stroke-opacity="0.72"/>
+  <path d="M260 685H480" stroke="#F4F7FB" stroke-opacity="0.86" stroke-width="18"/>
+  <path d="M540 685H820" stroke="#F23030" stroke-width="18"/>
+  <path d="M880 685H1290" stroke="#F7B500" stroke-width="18"/>
+  <path d="M0 165L1600 722" stroke="#F23030" stroke-width="5" stroke-opacity="0.72"/>
+  <path d="M0 210L1600 767" stroke="#F7B500" stroke-width="3" stroke-opacity="0.78"/>
+  <text x="205" y="812" fill="#F4F7FB" font-family="Arial, sans-serif" font-size="76" font-weight="900" letter-spacing="4">DASHBOARD</text>
+  <text x="708" y="812" fill="#F7B500" font-family="Arial, sans-serif" font-size="32" font-weight="800" letter-spacing="10">TALENT ANALYTICS</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="1600" y2="1000" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#030303"/>
+      <stop offset="0.5" stop-color="#111214"/>
+      <stop offset="1" stop-color="#1B1C1F"/>
+    </linearGradient>
+  </defs>
+</svg>

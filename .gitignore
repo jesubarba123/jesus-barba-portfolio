@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+.tooling/
+.DS_Store
+*.log
+tsconfig.tsbuildinfo
+contact-sheet.jpg
+portfolio-preview.png

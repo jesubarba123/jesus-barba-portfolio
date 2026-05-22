@@ -1,0 +1,33 @@
+{
+  "name": "jesus-barba-premium-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "dev:wasm": "node scripts/next-with-wasm.mjs dev",
+    "build": "next build --webpack",
+    "build:wasm": "node scripts/next-with-wasm.mjs build",
+    "postbuild": "node scripts/postbuild.mjs",
+    "preview": "python3 -m http.server 4173 --directory out"
+  },
+  "dependencies": {
+    "framer-motion": "latest",
+    "lucide-react": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@next/swc-wasm-nodejs": "^16.2.6",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.17",
+    "typescript": "latest"
+  },
+  "overrides": {
+    "postcss": "^8.5.10"
+  }
+}

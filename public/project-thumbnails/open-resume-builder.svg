@@ -1,0 +1,17 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Open Resume Builder thumbnail</title>
+  <desc id="desc">Premium abstract dashboard visual for a resume automation project.</desc>
+  <rect width="1600" height="1000" fill="#030303"/>
+  <path d="M0 720L1600 118V0H0V720Z" fill="#111214"/>
+  <path d="M125 180H1250L1475 405V820H350L125 595V180Z" fill="#15161A" stroke="#F7B500" stroke-width="5"/>
+  <path d="M224 286H766" stroke="#F4F7FB" stroke-width="28"/>
+  <path d="M224 368H1080" stroke="#777E89" stroke-width="16"/>
+  <path d="M224 430H922" stroke="#777E89" stroke-width="16"/>
+  <path d="M224 492H672" stroke="#777E89" stroke-width="16"/>
+  <path d="M1010 548L1188 370L1360 548L1188 727L1010 548Z" fill="#F23030"/>
+  <path d="M1124 548L1190 482L1255 548L1190 613L1124 548Z" fill="#030303"/>
+  <path d="M0 900L1600 300" stroke="#F23030" stroke-width="6" stroke-opacity="0.8"/>
+  <path d="M0 942L1600 342" stroke="#F7B500" stroke-width="3" stroke-opacity="0.85"/>
+  <text x="126" y="820" fill="#F4F7FB" font-family="Arial, sans-serif" font-size="84" font-weight="900" letter-spacing="4">RESUME BUILDER</text>
+  <text x="126" y="892" fill="#F7B500" font-family="Arial, sans-serif" font-size="28" font-weight="800" letter-spacing="12">AI TALENT AUTOMATION</text>
+</svg>
