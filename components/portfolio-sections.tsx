@@ -34,6 +34,26 @@ function asset(path: string) {
   return `${basePath}${path}`;
 }
 
+function downloadAsset(path: string, fileName: string) {
+  const link = document.createElement("a");
+  link.href = asset(path);
+  link.download = fileName;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+}
+
+function downloadCvFiles() {
+  portfolioData.shared.cvFiles.forEach((file, index) => {
+    if (index === 0) {
+      downloadAsset(file.path, file.fileName);
+      return;
+    }
+
+    window.setTimeout(() => downloadAsset(file.path, file.fileName), index * 180);
+  });
+}
+
 const tokenPillClasses = [
   "border-racing/35 bg-racing/10 text-racing shadow-[0_0_18px_rgba(111,164,215,0.08)]",
   "border-electric/35 bg-electric/10 text-electric shadow-[0_0_18px_rgba(95,184,201,0.08)]",
@@ -314,14 +334,19 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
               {content.hero.ctas.projects}
               <ArrowRight size={18} aria-hidden />
             </a>
-            <a
-              href={asset(portfolioData.shared.cvPath)}
-              download
+            <button
+              type="button"
+              onClick={downloadCvFiles}
               className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-electric/30 bg-electric/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-electric transition hover:border-electric hover:bg-electric hover:text-ink"
+              aria-label={
+                lang === "en"
+                  ? "Download Spanish and English CV PDFs"
+                  : "Descargar los CVs en español e inglés"
+              }
             >
               {content.hero.ctas.cv}
               <Download size={18} aria-hidden />
-            </a>
+            </button>
             <a
               href="#contact"
               className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-volt/30 bg-volt/10 px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-volt transition hover:border-volt hover:bg-volt hover:text-ink"

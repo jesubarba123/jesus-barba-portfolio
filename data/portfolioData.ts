@@ -90,7 +90,16 @@ export type PortfolioContent = {
 };
 
 const shared = {
-  cvPath: "/cv/CV-Jesus-Barba-2026.pdf",
+  cvFiles: [
+    {
+      path: "/cv/CV-Jesus-Gonzalo-Barba-Garcia-05-2026-ES.pdf",
+      fileName: "CV-Jesus-Gonzalo-Barba-Garcia-05-2026-ES.pdf"
+    },
+    {
+      path: "/cv/CV-Jesus-Gonzalo-Barba-Garcia-05-2026-EN.pdf",
+      fileName: "CV-Jesus-Gonzalo-Barba-Garcia-05-2026-EN.pdf"
+    }
+  ],
   email: "jesubarba123@gmail.com",
   phone: "+51 999 629 969",
   linkedin: "https://www.linkedin.com/in/jesus-barba-a8b671242",
@@ -161,7 +170,7 @@ export const portfolioData: {
           "A data-driven HR professional focused on IT recruiting, candidate experience, people analytics and scalable automation for modern talent operations.",
         ctas: {
           projects: "View projects",
-          cv: "Download CV",
+          cv: "Download CVs",
           contact: "Contact"
         },
         status: "Upcoming Master's Degree in Data Science, ML and AI",
@@ -475,7 +484,7 @@ export const portfolioData: {
           "Profesional de RRHH basado en datos, enfocado en reclutamiento TI, experiencia del candidato, people analytics y automatización escalable para operaciones modernas de talento.",
         ctas: {
           projects: "Ver proyectos",
-          cv: "Descargar CV",
+          cv: "Descargar CVs",
           contact: "Contactar"
         },
         status: "Próximo Master's Degree en Data Science, ML y AI",
