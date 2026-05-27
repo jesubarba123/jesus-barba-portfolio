@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     siteName: "Jesús Barba Portfolio",
     images: [
       {
-        url: `${basePath}/images/jesus-corporate.jpg`,
+        url: `${basePath}/images/jesus-formal.jpg`,
         width: 1448,
         height: 1086,
-        alt: "Corporate portrait of Jesús Gonzalo Barba García"
+        alt: "Formal portrait of Jesús Gonzalo Barba García"
       }
     ],
     locale: "en_US",

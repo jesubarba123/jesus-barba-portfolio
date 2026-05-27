@@ -100,10 +100,17 @@ const shared = {
 const photos: Localized<PortfolioContent["photos"]> = {
   en: [
     {
+      src: "/images/jesus-formal.jpg",
+      alt: "Formal black and white portrait of Jesús Gonzalo Barba García in an office setting.",
+      label: "Formal portrait",
+      caption: "Executive signal",
+      treatment: "original"
+    },
+    {
       src: "/images/jesus-corporate.jpg",
       alt: "Corporate portrait of Jesús Gonzalo Barba García in a navy suit.",
       label: "Corporate portrait",
-      caption: "Executive signal",
+      caption: "Studio profile",
       treatment: "original"
     },
     {
@@ -116,10 +123,17 @@ const photos: Localized<PortfolioContent["photos"]> = {
   ],
   es: [
     {
+      src: "/images/jesus-formal.jpg",
+      alt: "Retrato formal en blanco y negro de Jesús Gonzalo Barba García en un entorno de oficina.",
+      label: "Retrato formal",
+      caption: "Señal ejecutiva",
+      treatment: "original"
+    },
+    {
       src: "/images/jesus-corporate.jpg",
       alt: "Retrato corporativo de Jesús Gonzalo Barba García con terno azul.",
       label: "Retrato corporativo",
-      caption: "Señal ejecutiva",
+      caption: "Perfil de estudio",
       treatment: "original"
     },
     {
@@ -334,6 +348,16 @@ export const portfolioData: {
         intro:
           "Projects are based on the public repositories available in your GitHub profile. Visual thumbnails are custom placeholders so no external brand assets are copied.",
         items: [
+          {
+            name: "Pay Equity and Talent Attrition Risk",
+            description:
+              "An interactive people analytics visualization that combines pay equity signals, role complexity and attrition-risk indicators in a 3D Plotly experience.",
+            repo: "https://github.com/jesubarba123/Pay-Equity-and-Talent-Attrition-Risk",
+            demo: "https://jesubarba123.github.io/Pay-Equity-and-Talent-Attrition-Risk/",
+            thumbnail: "/project-thumbnails/pay-equity-risk.svg",
+            technologies: ["Python", "Plotly", "People Analytics", "Risk Modeling"],
+            signal: "Public GitHub Pages visualization verified."
+          },
           {
             name: "Open Resume Builder",
             description:
@@ -638,6 +662,16 @@ export const portfolioData: {
         intro:
           "Los proyectos se basan en los repositorios públicos disponibles en tu perfil de GitHub. Las miniaturas visuales son placeholders propios para no copiar assets de marcas externas.",
         items: [
+          {
+            name: "Pay Equity and Talent Attrition Risk",
+            description:
+              "Visualización interactiva de people analytics que combina señales de equidad salarial, complejidad del rol e indicadores de riesgo de fuga en una experiencia 3D con Plotly.",
+            repo: "https://github.com/jesubarba123/Pay-Equity-and-Talent-Attrition-Risk",
+            demo: "https://jesubarba123.github.io/Pay-Equity-and-Talent-Attrition-Risk/",
+            thumbnail: "/project-thumbnails/pay-equity-risk.svg",
+            technologies: ["Python", "Plotly", "People Analytics", "Modelo de riesgo"],
+            signal: "Visualización pública en GitHub Pages verificada."
+          },
           {
             name: "Open Resume Builder",
             description:

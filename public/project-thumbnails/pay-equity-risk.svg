@@ -1,0 +1,38 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="750" fill="#020407"/>
+  <rect x="42" y="42" width="1116" height="666" stroke="#1F3D52" stroke-width="2"/>
+  <path d="M42 134H1158" stroke="#163246" stroke-width="1"/>
+  <path d="M42 616H1158" stroke="#163246" stroke-width="1"/>
+  <path d="M156 42V708M300 42V708M444 42V708M588 42V708M732 42V708M876 42V708M1020 42V708" stroke="#0C1A23" stroke-width="1"/>
+  <path d="M42 226H1158M42 318H1158M42 410H1158M42 502H1158" stroke="#0C1A23" stroke-width="1"/>
+  <path d="M252 544L548 376L868 454" stroke="#5FB8C9" stroke-width="3" stroke-linecap="round"/>
+  <path d="M252 544L252 252M252 544L892 544M252 544L548 376" stroke="#8EA8B8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M548 376L548 168M868 454L868 238" stroke="#223F4F" stroke-width="2" stroke-dasharray="10 12"/>
+  <circle cx="324" cy="504" r="12" fill="#6FA4D7"/>
+  <circle cx="416" cy="452" r="9" fill="#78C6B0"/>
+  <circle cx="508" cy="402" r="14" fill="#B29564"/>
+  <circle cx="604" cy="390" r="10" fill="#5FB8C9"/>
+  <circle cx="686" cy="414" r="16" fill="#78C6B0"/>
+  <circle cx="778" cy="440" r="11" fill="#6FA4D7"/>
+  <circle cx="868" cy="454" r="20" fill="#B15C5C"/>
+  <circle cx="868" cy="454" r="34" stroke="#B15C5C" stroke-width="2" opacity=".35"/>
+  <g filter="url(#glow)">
+    <path d="M324 504L416 452L508 402L604 390L686 414L778 440L868 454" stroke="#5FB8C9" stroke-width="2"/>
+  </g>
+  <rect x="72" y="72" width="304" height="40" fill="#08111A" stroke="#1F3D52"/>
+  <text x="92" y="98" fill="#AFC2CF" font-family="SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" letter-spacing="3">pay_equity_risk.py</text>
+  <text x="72" y="676" fill="#5FB8C9" font-family="SFMono-Regular, Consolas, monospace" font-size="18" font-weight="700" letter-spacing="3">PEOPLE ANALYTICS / ATTRITION SIGNAL</text>
+  <text x="72" y="186" fill="#F3FBFF" font-family="SFMono-Regular, Consolas, monospace" font-size="54" font-weight="900" letter-spacing="1">EQUITY RISK</text>
+  <text x="72" y="240" fill="#8EA8B8" font-family="SFMono-Regular, Consolas, monospace" font-size="26" font-weight="700">3D compensation model</text>
+  <text x="930" y="520" fill="#B15C5C" font-family="SFMono-Regular, Consolas, monospace" font-size="18" font-weight="800">outlier</text>
+  <text x="930" y="548" fill="#B29564" font-family="SFMono-Regular, Consolas, monospace" font-size="18" font-weight="800">risk: high</text>
+  <defs>
+    <filter id="glow" x="286" y="352" width="620" height="190" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>

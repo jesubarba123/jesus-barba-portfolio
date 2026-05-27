@@ -4,16 +4,16 @@
 
 :root {
   --ink: #000000;
-  --graphite: #050509;
-  --carbon: #090f18;
+  --graphite: #030609;
+  --carbon: #071019;
   --platinum: #f3fbff;
-  --muted: #8ba0b7;
-  --racing: #3f7cff;
-  --ignition: #4a3fb8;
-  --volt: #2ee88f;
-  --cyan: #36bfd4;
-  --amber: #a77b44;
-  --editor-line: #152033;
+  --muted: #8ea8b8;
+  --racing: #6fa4d7;
+  --ignition: #263760;
+  --volt: #78c6b0;
+  --cyan: #5fb8c9;
+  --amber: #b29564;
+  --editor-line: #112331;
 }
 
 * {
@@ -28,10 +28,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    linear-gradient(115deg, rgba(74, 63, 184, 0.16), transparent 34%),
-    linear-gradient(245deg, rgba(54, 191, 212, 0.1), transparent 36%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 82px),
-    linear-gradient(180deg, #000000 0%, #040407 45%, #000000 100%);
+    radial-gradient(circle at 18% 8%, rgba(95, 184, 201, 0.12), transparent 30%),
+    radial-gradient(circle at 82% 14%, rgba(111, 164, 215, 0.1), transparent 32%),
+    linear-gradient(115deg, rgba(38, 55, 96, 0.12), transparent 36%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 96px),
+    linear-gradient(180deg, #000000 0%, #020407 48%, #000000 100%);
   color: var(--platinum);
   font-family:
     "JetBrains Mono", "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono",
@@ -47,9 +48,9 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(46, 232, 143, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(54, 191, 212, 0.026) 1px, transparent 1px);
-  background-size: 28px 28px;
+    linear-gradient(rgba(120, 198, 176, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 184, 201, 0.024) 1px, transparent 1px);
+  background-size: 32px 32px;
   mask-image: linear-gradient(to bottom, black, transparent 84%);
 }
 
@@ -66,11 +67,11 @@ body::after {
     transparent 1px,
     transparent 5px
   );
-  opacity: 0.22;
+  opacity: 0.13;
 }
 
 ::selection {
-  background: rgba(63, 124, 255, 0.48);
+  background: rgba(111, 164, 215, 0.42);
   color: white;
 }
 
@@ -102,9 +103,9 @@ textarea {
 
 .precision-grid {
   background-image:
-    linear-gradient(rgba(46, 232, 143, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(54, 191, 212, 0.048) 1px, transparent 1px);
-  background-size: 44px 44px;
+    linear-gradient(rgba(120, 198, 176, 0.036) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(95, 184, 201, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
   mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
@@ -112,9 +113,9 @@ textarea {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(54, 191, 212, 0.8),
-    rgba(63, 124, 255, 0.75),
-    rgba(46, 232, 143, 0.72),
+    rgba(95, 184, 201, 0.62),
+    rgba(111, 164, 215, 0.58),
+    rgba(120, 198, 176, 0.46),
     transparent
   );
 }
@@ -130,13 +131,13 @@ textarea {
   line-height: 1;
   letter-spacing: 0;
   white-space: nowrap;
-  background: linear-gradient(90deg, #f8fbff 0%, #36bfd4 34%, #3f7cff 68%, #7668ff 100%);
+  background: linear-gradient(90deg, #f8fbff 0%, #8ed7e2 35%, #6fa4d7 72%, #d5dde4 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   text-shadow:
-    0 0 18px rgba(63, 124, 255, 0.36),
-    0 0 34px rgba(54, 191, 212, 0.18);
+    0 0 16px rgba(95, 184, 201, 0.26),
+    0 0 28px rgba(111, 164, 215, 0.16);
 }
 
 .diagonal-slice {
@@ -149,8 +150,8 @@ textarea {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(118deg, transparent 0 52%, rgba(54, 191, 212, 0.1) 52.2%, transparent 53%),
-    linear-gradient(118deg, transparent 0 72%, rgba(63, 124, 255, 0.1) 72.2%, transparent 73%);
+    linear-gradient(118deg, transparent 0 52%, rgba(95, 184, 201, 0.074) 52.2%, transparent 53%),
+    linear-gradient(118deg, transparent 0 72%, rgba(111, 164, 215, 0.066) 72.2%, transparent 73%);
 }
 
 .focus-ring {
@@ -164,14 +165,14 @@ textarea {
 
 .code-panel {
   position: relative;
-  border: 1px solid rgba(54, 191, 212, 0.2);
+  border: 1px solid rgba(95, 184, 201, 0.18);
   background:
-    linear-gradient(180deg, rgba(9, 15, 24, 0.96), rgba(0, 0, 0, 0.96)),
-    linear-gradient(90deg, rgba(63, 124, 255, 0.1), rgba(54, 191, 212, 0.08));
+    linear-gradient(180deg, rgba(7, 16, 25, 0.97), rgba(0, 0, 0, 0.98)),
+    linear-gradient(90deg, rgba(111, 164, 215, 0.06), rgba(95, 184, 201, 0.052));
   box-shadow:
-    0 0 0 1px rgba(63, 124, 255, 0.08) inset,
-    0 0 34px rgba(54, 191, 212, 0.1),
-    0 0 58px rgba(63, 124, 255, 0.08);
+    0 0 0 1px rgba(111, 164, 215, 0.06) inset,
+    0 0 26px rgba(95, 184, 201, 0.07),
+    0 28px 90px rgba(0, 0, 0, 0.6);
 }
 
 .code-panel::after {
@@ -181,45 +182,45 @@ textarea {
   pointer-events: none;
   background:
     linear-gradient(90deg, transparent 0 7%, rgba(255, 255, 255, 0.04) 7.2%, transparent 7.4%),
-    repeating-linear-gradient(180deg, transparent 0 29px, rgba(46, 232, 143, 0.045) 29px 30px);
-  opacity: 0.65;
+    repeating-linear-gradient(180deg, transparent 0 31px, rgba(120, 198, 176, 0.032) 31px 32px);
+  opacity: 0.48;
 }
 
 .editor-chrome {
-  border-bottom: 1px solid rgba(54, 191, 212, 0.18);
-  background: linear-gradient(90deg, rgba(63, 124, 255, 0.1), rgba(54, 191, 212, 0.07));
+  border-bottom: 1px solid rgba(95, 184, 201, 0.16);
+  background: linear-gradient(90deg, rgba(111, 164, 215, 0.08), rgba(95, 184, 201, 0.045));
 }
 
 .neon-title {
-    color: #f8fbff;
+  color: #f8fbff;
   text-shadow:
-    0 0 14px rgba(54, 191, 212, 0.36),
-    0 0 28px rgba(63, 124, 255, 0.28);
+    0 0 10px rgba(95, 184, 201, 0.28),
+    0 0 22px rgba(111, 164, 215, 0.18);
 }
 
 .neon-pink {
-  color: #6da0ff;
-  text-shadow: 0 0 18px rgba(63, 124, 255, 0.36);
+  color: #6fa4d7;
+  text-shadow: 0 0 14px rgba(111, 164, 215, 0.26);
 }
 
 .neon-cyan {
-  color: #36bfd4;
-  text-shadow: 0 0 18px rgba(54, 191, 212, 0.36);
+  color: #5fb8c9;
+  text-shadow: 0 0 14px rgba(95, 184, 201, 0.3);
 }
 
 .neon-green {
-  color: #2ee88f;
-  text-shadow: 0 0 16px rgba(46, 232, 143, 0.34);
+  color: #78c6b0;
+  text-shadow: 0 0 13px rgba(120, 198, 176, 0.26);
 }
 
 .neon-purple {
-  color: #8a7dff;
-  text-shadow: 0 0 18px rgba(74, 63, 184, 0.42);
+  color: #9aa9d6;
+  text-shadow: 0 0 14px rgba(111, 164, 215, 0.18);
 }
 
 .neon-amber {
-  color: #a77b44;
-  text-shadow: 0 0 16px rgba(167, 123, 68, 0.34);
+  color: #b29564;
+  text-shadow: 0 0 12px rgba(178, 149, 100, 0.22);
 }
 
 .line-number {
@@ -229,9 +230,9 @@ textarea {
 
 .minimap {
   background:
-    repeating-linear-gradient(180deg, #3f7cff 0 2px, #2ee88f 2px 4px, #36bfd4 4px 6px, #a77b44 6px 8px, transparent 8px 12px),
-    #050509;
-  opacity: 0.58;
+    repeating-linear-gradient(180deg, #6fa4d7 0 2px, #78c6b0 2px 4px, #5fb8c9 4px 6px, #b29564 6px 8px, transparent 8px 14px),
+    #030609;
+  opacity: 0.44;
 }
 
 .terminal-cursor::after {

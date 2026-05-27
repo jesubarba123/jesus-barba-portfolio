@@ -35,10 +35,10 @@ function asset(path: string) {
 }
 
 const tokenPillClasses = [
-  "border-racing/35 bg-racing/10 text-racing shadow-[0_0_24px_rgba(63,124,255,0.1)]",
-  "border-electric/35 bg-electric/10 text-electric shadow-[0_0_24px_rgba(54,191,212,0.1)]",
-  "border-volt/35 bg-volt/10 text-volt shadow-[0_0_24px_rgba(46,232,143,0.1)]",
-  "border-amber/35 bg-amber/10 text-amber shadow-[0_0_24px_rgba(167,123,68,0.1)]"
+  "border-racing/35 bg-racing/10 text-racing shadow-[0_0_18px_rgba(111,164,215,0.08)]",
+  "border-electric/35 bg-electric/10 text-electric shadow-[0_0_18px_rgba(95,184,201,0.08)]",
+  "border-volt/35 bg-volt/10 text-volt shadow-[0_0_18px_rgba(120,198,176,0.08)]",
+  "border-amber/35 bg-amber/10 text-amber shadow-[0_0_18px_rgba(178,149,100,0.08)]"
 ];
 
 function fadeUp(delay = 0): MotionProps {
@@ -111,10 +111,10 @@ export function Header({
   onLanguageChange: () => void;
 }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-electric/20 bg-black/88 font-mono shadow-[0_0_36px_rgba(54,191,212,0.07)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-electric/20 bg-black/88 font-mono shadow-[0_0_30px_rgba(95,184,201,0.055)] backdrop-blur-xl">
       <div className="editor-chrome mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#hero" className="focus-ring flex items-center gap-3" aria-label="Go to hero">
-          <span className="grid h-9 w-9 place-items-center border border-volt/40 bg-volt/10 text-sm font-black text-volt shadow-[0_0_18px_rgba(46,232,143,0.18)] [clip-path:polygon(0_0,80%_0,100%_20%,100%_100%,20%_100%,0_80%)]">
+          <span className="grid h-9 w-9 place-items-center border border-volt/40 bg-volt/10 text-sm font-black text-volt shadow-[0_0_14px_rgba(120,198,176,0.14)] [clip-path:polygon(0_0,80%_0,100%_20%,100%_100%,20%_100%,0_80%)]">
             .jb
           </span>
           <span className="hidden text-xs font-black uppercase tracking-[0.16em] text-white sm:block">
@@ -149,7 +149,7 @@ export function Header({
           </button>
           <a
             href="#contact"
-            className="focus-ring hidden h-10 items-center gap-2 border border-racing/35 bg-racing/10 px-4 text-xs font-black uppercase tracking-[0.14em] text-racing shadow-[0_0_22px_rgba(63,124,255,0.12)] transition hover:bg-racing hover:text-white sm:inline-flex"
+            className="focus-ring hidden h-10 items-center gap-2 border border-racing/35 bg-racing/10 px-4 text-xs font-black uppercase tracking-[0.14em] text-racing shadow-[0_0_18px_rgba(111,164,215,0.1)] transition hover:bg-racing hover:text-white sm:inline-flex"
           >
             <Mail size={16} aria-hidden />
             Contact
@@ -182,9 +182,9 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
         >
           <div className="editor-chrome -mx-5 -mt-5 mb-7 flex items-center justify-between gap-4 px-5 py-3 sm:-mx-7 sm:-mt-7 sm:px-7 lg:-mx-8 lg:-mt-8 lg:px-8">
             <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full bg-racing shadow-[0_0_14px_rgba(63,124,255,0.58)]" />
-              <span className="h-3 w-3 rounded-full bg-amber shadow-[0_0_14px_rgba(167,123,68,0.5)]" />
-              <span className="h-3 w-3 rounded-full bg-volt shadow-[0_0_14px_rgba(46,232,143,0.52)]" />
+              <span className="h-3 w-3 rounded-full bg-racing shadow-[0_0_12px_rgba(111,164,215,0.44)]" />
+              <span className="h-3 w-3 rounded-full bg-amber shadow-[0_0_12px_rgba(178,149,100,0.36)]" />
+              <span className="h-3 w-3 rounded-full bg-volt shadow-[0_0_12px_rgba(120,198,176,0.4)]" />
             </div>
             <p className="text-xs font-black uppercase tracking-[0.18em] text-white/58">
               hero.profile.tsx
@@ -238,7 +238,7 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
               </div>
             </div>
             <div className="absolute inset-0 z-10 bg-gradient-to-t from-ink via-transparent to-transparent" />
-            <div className="absolute inset-0 z-10 mix-blend-screen opacity-40 [background:linear-gradient(115deg,transparent_0_42%,rgba(54,191,212,.32)_42.2%,transparent_43%,transparent_68%,rgba(63,124,255,.34)_68.2%,transparent_69%)]" />
+            <div className="absolute inset-0 z-10 mix-blend-screen opacity-35 [background:linear-gradient(115deg,transparent_0_42%,rgba(95,184,201,.24)_42.2%,transparent_43%,transparent_68%,rgba(111,164,215,.24)_68.2%,transparent_69%)]" />
             <div className="minimap absolute bottom-24 right-4 z-20 hidden h-52 w-8 border border-white/10 sm:block" aria-hidden />
             <Image
               src={asset(photo.src)}
@@ -309,7 +309,7 @@ export function HeroSection({ content, lang }: { content: PortfolioContent; lang
           <div className="mt-6 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
             <a
               href="#projects"
-              className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_0_28px_rgba(63,124,255,0.18)] transition hover:bg-electric hover:text-ink"
+              className="focus-ring inline-flex h-13 items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.14em] text-white shadow-[0_0_22px_rgba(111,164,215,0.14)] transition hover:bg-electric hover:text-ink"
             >
               {content.hero.ctas.projects}
               <ArrowRight size={18} aria-hidden />
@@ -401,7 +401,7 @@ export function AboutSection({ content }: { content: PortfolioContent }) {
             ))}
           </div>
 
-          <div className="relative z-10 border-l-4 border-volt bg-volt/10 p-6 shadow-[0_0_24px_rgba(46,232,143,0.08)]">
+          <div className="relative z-10 border-l-4 border-volt bg-volt/10 p-6 shadow-[0_0_20px_rgba(120,198,176,0.07)]">
             <p className="text-xs font-black uppercase tracking-[0.2em] text-volt">
               {content.about.opportunitiesTitle}
             </p>
@@ -764,7 +764,7 @@ export function ContactSection({ content }: { content: PortfolioContent }) {
           </label>
           <button
             type="submit"
-            className="focus-ring relative z-10 mt-6 inline-flex w-full items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.16em] text-white shadow-[0_0_28px_rgba(63,124,255,0.18)] transition hover:bg-volt hover:text-ink"
+            className="focus-ring relative z-10 mt-6 inline-flex w-full items-center justify-center gap-3 border border-racing/35 bg-racing px-6 py-4 text-sm font-black uppercase tracking-[0.16em] text-white shadow-[0_0_22px_rgba(111,164,215,0.14)] transition hover:bg-volt hover:text-ink"
           >
             <Send size={18} aria-hidden />
             {content.contact.form.submit}

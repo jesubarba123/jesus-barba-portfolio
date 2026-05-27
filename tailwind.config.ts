@@ -10,18 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#000000",
-        graphite: "#050509",
-        carbon: "#090f18",
-        platinum: "#f4f7fb",
-        racing: "#3f7cff",
-        ignition: "#4a3fb8",
-        volt: "#2ee88f",
-        electric: "#36bfd4",
-        amber: "#a77b44"
+        graphite: "#030609",
+        carbon: "#071019",
+        platinum: "#f3fbff",
+        racing: "#6fa4d7",
+        ignition: "#263760",
+        volt: "#78c6b0",
+        electric: "#5fb8c9",
+        amber: "#b29564"
       },
       boxShadow: {
         premium: "0 30px 90px rgba(0, 0, 0, 0.72)",
-        glow: "0 0 34px rgba(54, 191, 212, 0.18), 0 0 58px rgba(63, 124, 255, 0.12)"
+        glow: "0 0 28px rgba(95, 184, 201, 0.13), 0 0 48px rgba(111, 164, 215, 0.09)"
       },
       clipPath: {
         angle: "polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px))"
