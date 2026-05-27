@@ -107,13 +107,6 @@ const photos: Localized<PortfolioContent["photos"]> = {
       treatment: "original"
     },
     {
-      src: "/images/jesus-corporate.jpg",
-      alt: "Corporate portrait of Jesús Gonzalo Barba García in a navy suit.",
-      label: "Corporate portrait",
-      caption: "Studio profile",
-      treatment: "original"
-    },
-    {
       src: "/images/jesus-lifestyle.jpg",
       alt: "Outdoor lifestyle portrait of Jesús Gonzalo Barba García.",
       label: "Original version",
@@ -127,13 +120,6 @@ const photos: Localized<PortfolioContent["photos"]> = {
       alt: "Retrato formal en blanco y negro de Jesús Gonzalo Barba García en un entorno de oficina.",
       label: "Retrato formal",
       caption: "Señal ejecutiva",
-      treatment: "original"
-    },
-    {
-      src: "/images/jesus-corporate.jpg",
-      alt: "Retrato corporativo de Jesús Gonzalo Barba García con terno azul.",
-      label: "Retrato corporativo",
-      caption: "Perfil de estudio",
       treatment: "original"
     },
     {
